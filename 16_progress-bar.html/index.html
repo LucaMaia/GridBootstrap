@@ -8,9 +8,58 @@
 </head>
 
 <body>
-   <div class="container">
-       <div class="progress-bar"></div>
-   </div>
+
+<div class="container">
+    <div class="progress" style="height:30px;margin: 20px">
+        <div id="pb1" class="progress-bar bg-success" style="width: 20%"></div>
+    </div>
+
+    <div class="progress" style="height:30px;margin: 20px">
+        <div id="pb2" class="progress-bar-striped bg-warning" style="width: 20%"></div>
+    </div>
+
+    <div class="progress" style="height:30px;margin: 20px">
+        <div id="pb3" class="progress-bar-striped progress-bar-animated bg-danger" style="width: 20%"></div>
+    </div>
+</div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
+<script>
+        let barra = document.getElementById('pb1');
+        let carga = 0;
+
+        let intBarra = setInterval(()=>{
+            barra.innerHTML = carga + "%";
+            barra.style.width = carga + "%";
+            carga++;
+            if(carga >= 100){
+                carga = 0;
+            }
+        }, 100)
+
+        let barra2 = document.getElementById('pb2');
+        let carga2 = 0;
+
+        let intBarra2 = setInterval(()=>{
+            barra2.innerHTML = carga2 + "%";
+            barra2.style.width = carga2 + "%";
+            carga2++;
+            if(carga2 >= 90){
+                carga2 = 0;
+            }
+        }, 100)
+
+        let barra3 = document.getElementById('pb3');
+        let carga3 = 0;
+
+        let intBarra3 = setInterval(()=>{
+            barra3.innerHTML = carga3 + "%";
+            barra3.style.width = carga3 + "%";
+            carga3++;
+            if(carga3 >= 80){
+                carga3 = 0;
+            }
+        }, 100)
+</script>
 </html>
